@@ -25,19 +25,25 @@ RUN apt-get install -y --no-install-recommends \
     apache2 \
     ca-certificates \
     gcc \
-    libc6-dev \
+    libc6-dev \    
     libapache2-mod-perl2 \
     libcgi-pm-perl \
     libcrypt-openssl-rsa-perl \
     libdbd-pg-perl \
+    libdbix-dbschema-perl \
     libdigest-bcrypt-perl \
     libdigest-hmac-perl \
     libfile-which-perl \
+    libjson-any-perl \
     liblist-moreutils-perl \
+    libmoosex-types-json-perl \
+    libmoosex-types-loadableclass-perl \
+    libmoosex-types-path-class-perl \
     libnet-dns-perl \
     libnet-ip-perl \
     libnet-netmask-perl \
     libssl-dev \
+    libtext-csv-perl \
     make \
     wget
 

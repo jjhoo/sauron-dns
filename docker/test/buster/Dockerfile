@@ -30,14 +30,20 @@ RUN apt-get install -y --no-install-recommends \
     libcgi-pm-perl \
     libcrypt-openssl-rsa-perl \
     libdbd-pg-perl \
+    libdbix-dbschema-perl \
     libdigest-bcrypt-perl \
     libdigest-hmac-perl \
     libfile-which-perl \
+    libjson-any-perl \
     liblist-moreutils-perl \
+    libmoosex-types-json-perl \
+    libmoosex-types-loadableclass-perl \
+    libmoosex-types-path-class-perl \
     libnet-dns-perl \
     libnet-ip-perl \
     libnet-netmask-perl \
     libssl-dev \
+    libtext-csv-perl \
     make \
     tini \
     wget
