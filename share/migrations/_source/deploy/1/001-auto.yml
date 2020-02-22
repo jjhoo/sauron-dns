@@ -1,0 +1,5132 @@
+---
+schema:
+  procedures: {}
+  tables:
+    a_entries:
+      constraints:
+        - deferrable: 1
+          expression: ''
+          fields:
+            - id
+          match_type: ''
+          name: ''
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: PRIMARY KEY
+      fields:
+        comment:
+          data_type: char
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: comment
+          order: 8
+          size:
+            - 20
+        forward:
+          data_type: boolean
+          default_value: !!perl/ref
+            =: true
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: forward
+          order: 7
+          size:
+            - 0
+        host:
+          data_type: integer
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: host
+          order: 2
+          size:
+            - 0
+        id:
+          data_type: integer
+          default_value: !!perl/ref
+            =: nextval(('"a_entries_id_seq"'::text)::regclass)
+          is_nullable: 0
+          is_primary_key: 1
+          is_unique: 0
+          name: id
+          order: 1
+          size:
+            - 0
+        ip:
+          data_type: inet
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: ip
+          order: 3
+          size:
+            - 0
+        ipv6:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: ipv6
+          order: 4
+          size:
+            - 0
+        reverse:
+          data_type: boolean
+          default_value: !!perl/ref
+            =: true
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: reverse
+          order: 6
+          size:
+            - 0
+        type:
+          data_type: integer
+          default_value: 0
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: type
+          order: 5
+          size:
+            - 0
+      indices: []
+      name: a_entries
+      options: []
+      order: 1
+    acls:
+      constraints:
+        - deferrable: 1
+          expression: ''
+          fields:
+            - id
+          match_type: ''
+          name: ''
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: PRIMARY KEY
+        - deferrable: 1
+          expression: ''
+          fields:
+            - name
+            - server
+          match_type: ''
+          name: acls_key
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: UNIQUE
+      fields:
+        cdate:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: cdate
+          order: 1
+          size:
+            - 0
+        comment:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: comment
+          order: 10
+          size:
+            - 0
+        cuser:
+          data_type: char
+          default_value: unknown
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: cuser
+          order: 2
+          size:
+            - 8
+        expiration:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: expiration
+          order: 5
+          size:
+            - 0
+        id:
+          data_type: integer
+          default_value: ~
+          is_auto_increment: 1
+          is_nullable: 0
+          is_primary_key: 1
+          is_unique: 0
+          name: id
+          order: 6
+          size:
+            - 0
+        mdate:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: mdate
+          order: 3
+          size:
+            - 0
+        muser:
+          data_type: char
+          default_value: unknown
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: muser
+          order: 4
+          size:
+            - 8
+        name:
+          data_type: text
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 1
+          name: name
+          order: 8
+          size:
+            - 0
+        server:
+          data_type: integer
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 1
+          name: server
+          order: 7
+          size:
+            - 0
+        type:
+          data_type: integer
+          default_value: 0
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: type
+          order: 9
+          size:
+            - 0
+      indices: []
+      name: acls
+      options: []
+      order: 2
+    arec_entries:
+      constraints:
+        - deferrable: 1
+          expression: ''
+          fields:
+            - id
+          match_type: ''
+          name: ''
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: PRIMARY KEY
+      fields:
+        arec:
+          data_type: integer
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: arec
+          order: 3
+          size:
+            - 0
+        host:
+          data_type: integer
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: host
+          order: 2
+          size:
+            - 0
+        id:
+          data_type: integer
+          default_value: !!perl/ref
+            =: nextval(('"arec_entries_id_seq"'::text)::regclass)
+          is_nullable: 0
+          is_primary_key: 1
+          is_unique: 0
+          name: id
+          order: 1
+          size:
+            - 0
+      indices: []
+      name: arec_entries
+      options: []
+      order: 3
+    cidr_entries:
+      constraints:
+        - deferrable: 1
+          expression: ''
+          fields:
+            - id
+          match_type: ''
+          name: ''
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: PRIMARY KEY
+      fields:
+        acl:
+          data_type: integer
+          default_value: -1
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: acl
+          order: 7
+          size:
+            - 0
+        comment:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: comment
+          order: 5
+          size:
+            - 0
+        id:
+          data_type: integer
+          default_value: !!perl/ref
+            =: nextval(('"cidr_entries_id_seq"'::text)::regclass)
+          is_nullable: 0
+          is_primary_key: 1
+          is_unique: 0
+          name: id
+          order: 1
+          size:
+            - 0
+        ip:
+          data_type: cidr
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: ip
+          order: 4
+          size:
+            - 0
+        mode:
+          data_type: integer
+          default_value: 0
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: mode
+          order: 6
+          size:
+            - 0
+        op:
+          data_type: integer
+          default_value: 0
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: op
+          order: 9
+          size:
+            - 0
+        port:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: port
+          order: 10
+          size:
+            - 0
+        ref:
+          data_type: integer
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: ref
+          order: 3
+          size:
+            - 0
+        tkey:
+          data_type: integer
+          default_value: -1
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: tkey
+          order: 8
+          size:
+            - 0
+        type:
+          data_type: integer
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: type
+          order: 2
+          size:
+            - 0
+      indices: []
+      name: cidr_entries
+      options: []
+      order: 4
+    common_fields:
+      constraints: []
+      fields:
+        cdate:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: cdate
+          order: 1
+          size:
+            - 0
+        cuser:
+          data_type: char
+          default_value: unknown
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: cuser
+          order: 2
+          size:
+            - 8
+        expiration:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: expiration
+          order: 5
+          size:
+            - 0
+        mdate:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: mdate
+          order: 3
+          size:
+            - 0
+        muser:
+          data_type: char
+          default_value: unknown
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: muser
+          order: 4
+          size:
+            - 8
+      indices: []
+      name: common_fields
+      options: []
+      order: 5
+    dhcp_entries:
+      constraints:
+        - deferrable: 1
+          expression: ''
+          fields:
+            - id
+          match_type: ''
+          name: ''
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: PRIMARY KEY
+      fields:
+        comment:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: comment
+          order: 5
+          size:
+            - 0
+        dhcp:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: dhcp
+          order: 4
+          size:
+            - 0
+        id:
+          data_type: integer
+          default_value: !!perl/ref
+            =: nextval(('"dhcp_entries_id_seq"'::text)::regclass)
+          is_nullable: 0
+          is_primary_key: 1
+          is_unique: 0
+          name: id
+          order: 1
+          size:
+            - 0
+        ref:
+          data_type: integer
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: ref
+          order: 3
+          size:
+            - 0
+        type:
+          data_type: integer
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: type
+          order: 2
+          size:
+            - 0
+      indices: []
+      name: dhcp_entries
+      options: []
+      order: 6
+    ether_info:
+      constraints:
+        - deferrable: 1
+          expression: ''
+          fields:
+            - ea
+          match_type: ''
+          name: ''
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: PRIMARY KEY
+      fields:
+        ea:
+          data_type: char
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 1
+          is_unique: 0
+          name: ea
+          order: 1
+          size:
+            - 6
+        info:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: info
+          order: 2
+          size:
+            - 0
+      indices: []
+      name: ether_info
+      options: []
+      order: 7
+    group_entries:
+      constraints:
+        - deferrable: 1
+          expression: ''
+          fields:
+            - id
+          match_type: ''
+          name: ''
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: PRIMARY KEY
+      fields:
+        grp:
+          data_type: integer
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: grp
+          order: 3
+          size:
+            - 0
+        host:
+          data_type: integer
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: host
+          order: 2
+          size:
+            - 0
+        id:
+          data_type: integer
+          default_value: !!perl/ref
+            =: nextval(('"group_entries_id_seq"'::text)::regclass)
+          is_nullable: 0
+          is_primary_key: 1
+          is_unique: 0
+          name: id
+          order: 1
+          size:
+            - 0
+      indices: []
+      name: group_entries
+      options: []
+      order: 8
+    groups:
+      constraints:
+        - deferrable: 1
+          expression: ''
+          fields:
+            - id
+          match_type: ''
+          name: ''
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: PRIMARY KEY
+        - deferrable: 1
+          expression: ''
+          fields:
+            - name
+            - server
+          match_type: ''
+          name: groups_key
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: UNIQUE
+      fields:
+        alevel:
+          data_type: integer
+          default_value: 0
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: alevel
+          order: 10
+          size:
+            - 0
+        cdate:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: cdate
+          order: 1
+          size:
+            - 0
+        comment:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: comment
+          order: 11
+          size:
+            - 0
+        cuser:
+          data_type: char
+          default_value: unknown
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: cuser
+          order: 2
+          size:
+            - 8
+        expiration:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: expiration
+          order: 5
+          size:
+            - 0
+        id:
+          data_type: integer
+          default_value: !!perl/ref
+            =: nextval(('"groups_id_seq"'::text)::regclass)
+          is_nullable: 0
+          is_primary_key: 1
+          is_unique: 0
+          name: id
+          order: 6
+          size:
+            - 0
+        mdate:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: mdate
+          order: 3
+          size:
+            - 0
+        muser:
+          data_type: char
+          default_value: unknown
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: muser
+          order: 4
+          size:
+            - 8
+        name:
+          data_type: text
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 1
+          name: name
+          order: 8
+          size:
+            - 0
+        server:
+          data_type: integer
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 1
+          name: server
+          order: 7
+          size:
+            - 0
+        type:
+          data_type: integer
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: type
+          order: 9
+          size:
+            - 0
+        vmps:
+          data_type: integer
+          default_value: -1
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: vmps
+          order: 12
+          size:
+            - 0
+      indices: []
+      name: groups
+      options: []
+      order: 9
+    hinfo_templates:
+      constraints:
+        - deferrable: 1
+          expression: ''
+          fields:
+            - id
+          match_type: ''
+          name: ''
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: PRIMARY KEY
+        - deferrable: 1
+          expression: ''
+          fields:
+            - hinfo
+          match_type: ''
+          name: hinfo_templates_hinfo_key
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: UNIQUE
+      fields:
+        cdate:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: cdate
+          order: 1
+          size:
+            - 0
+        cuser:
+          data_type: char
+          default_value: unknown
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: cuser
+          order: 2
+          size:
+            - 8
+        expiration:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: expiration
+          order: 5
+          size:
+            - 0
+        hinfo:
+          data_type: text
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 1
+          name: hinfo
+          order: 7
+          size:
+            - 0
+        id:
+          data_type: integer
+          default_value: !!perl/ref
+            =: nextval(('"hinfo_templates_id_seq"'::text)::regclass)
+          is_nullable: 0
+          is_primary_key: 1
+          is_unique: 0
+          name: id
+          order: 6
+          size:
+            - 0
+        mdate:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: mdate
+          order: 3
+          size:
+            - 0
+        muser:
+          data_type: char
+          default_value: unknown
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: muser
+          order: 4
+          size:
+            - 8
+        pri:
+          data_type: integer
+          default_value: 100
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: pri
+          order: 9
+          size:
+            - 0
+        type:
+          data_type: integer
+          default_value: 0
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: type
+          order: 8
+          size:
+            - 0
+      indices: []
+      name: hinfo_templates
+      options: []
+      order: 10
+    history:
+      constraints:
+        - deferrable: 1
+          expression: ''
+          fields:
+            - id
+          match_type: ''
+          name: ''
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: PRIMARY KEY
+        - deferrable: 0
+          expression: ''
+          fields:
+            - ref
+          match_type: ''
+          name: history_fk_ref
+          on_delete: CASCADE
+          on_update: CASCADE
+          options: []
+          reference_fields:
+            - id
+          reference_table: hosts
+          type: FOREIGN KEY
+      fields:
+        action:
+          data_type: char
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: action
+          order: 7
+          size:
+            - 25
+        date:
+          data_type: integer
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: date
+          order: 4
+          size:
+            - 0
+        id:
+          data_type: integer
+          default_value: !!perl/ref
+            =: nextval(('"history_id_seq"'::text)::regclass)
+          is_nullable: 0
+          is_primary_key: 1
+          is_unique: 0
+          name: id
+          order: 1
+          size:
+            - 0
+        info:
+          data_type: char
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: info
+          order: 8
+          size:
+            - 80
+        ref:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: ref
+          order: 6
+          size:
+            - 0
+        sid:
+          data_type: integer
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: sid
+          order: 2
+          size:
+            - 0
+        type:
+          data_type: integer
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: type
+          order: 5
+          size:
+            - 0
+        uid:
+          data_type: integer
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: uid
+          order: 3
+          size:
+            - 0
+      indices:
+        - fields:
+            - ref
+          name: history_idx_ref
+          options: []
+          type: NORMAL
+      name: history
+      options: []
+      order: 36
+    hosts:
+      constraints:
+        - deferrable: 1
+          expression: ''
+          fields:
+            - id
+          match_type: ''
+          name: ''
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: PRIMARY KEY
+        - deferrable: 1
+          expression: ''
+          fields:
+            - asset_id
+            - zone
+          match_type: ''
+          name: asset_key
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: UNIQUE
+        - deferrable: 1
+          expression: ''
+          fields:
+            - ether
+            - zone
+          match_type: ''
+          name: ether_key
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: UNIQUE
+        - deferrable: 1
+          expression: ''
+          fields:
+            - domain
+            - zone
+          match_type: ''
+          name: hostname_key
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: UNIQUE
+      fields:
+        alias:
+          data_type: integer
+          default_value: -1
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: alias
+          order: 13
+          size:
+            - 0
+        asset_id:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 1
+          name: asset_id
+          order: 35
+          size:
+            - 0
+        cdate:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: cdate
+          order: 1
+          size:
+            - 0
+        class:
+          data_type: char
+          default_value: IN
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: class
+          order: 11
+          size:
+            - 2
+        cname_txt:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: cname_txt
+          order: 14
+          size:
+            - 0
+        comment:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: comment
+          order: 36
+          size:
+            - 0
+        cuser:
+          data_type: char
+          default_value: unknown
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: cuser
+          order: 2
+          size:
+            - 8
+        dept:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: dept
+          order: 30
+          size:
+            - 0
+        dhcp_date:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: dhcp_date
+          order: 26
+          size:
+            - 0
+        dhcp_info:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: dhcp_info
+          order: 27
+          size:
+            - 0
+        dhcp_last:
+          data_type: integer
+          default_value: -1
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: dhcp_last
+          order: 39
+          size:
+            - 0
+        domain:
+          data_type: text
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 1
+          name: domain
+          order: 9
+          size:
+            - 0
+        email:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: email
+          order: 40
+          size:
+            - 0
+        ether:
+          data_type: char
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 1
+          name: ether
+          order: 24
+          size:
+            - 12
+        ether_alias:
+          data_type: integer
+          default_value: -1
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: ether_alias
+          order: 25
+          size:
+            - 0
+        expiration:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: expiration
+          order: 5
+          size:
+            - 0
+        flags:
+          data_type: integer
+          default_value: 0
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: flags
+          order: 37
+          size:
+            - 0
+        grp:
+          data_type: integer
+          default_value: -1
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: grp
+          order: 12
+          size:
+            - 0
+        hinfo_hw:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: hinfo_hw
+          order: 15
+          size:
+            - 0
+        hinfo_sw:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: hinfo_sw
+          order: 16
+          size:
+            - 0
+        huser:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: huser
+          order: 31
+          size:
+            - 0
+        id:
+          data_type: integer
+          default_value: !!perl/ref
+            =: nextval(('"hosts_id_seq"'::text)::regclass)
+          is_nullable: 0
+          is_primary_key: 1
+          is_unique: 0
+          name: id
+          order: 6
+          size:
+            - 0
+        info:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: info
+          order: 28
+          size:
+            - 0
+        loc:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: loc
+          order: 17
+          size:
+            - 0
+        location:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: location
+          order: 29
+          size:
+            - 0
+        mdate:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: mdate
+          order: 3
+          size:
+            - 0
+        misc:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: misc
+          order: 34
+          size:
+            - 0
+        model:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: model
+          order: 32
+          size:
+            - 0
+        muser:
+          data_type: char
+          default_value: unknown
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: muser
+          order: 4
+          size:
+            - 8
+        mx:
+          data_type: integer
+          default_value: -1
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: mx
+          order: 19
+          size:
+            - 0
+        prn:
+          data_type: boolean
+          default_value: !!perl/ref
+            =: false
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: prn
+          order: 23
+          size:
+            - 0
+        router:
+          data_type: integer
+          default_value: 0
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: router
+          order: 22
+          size:
+            - 0
+        rp_mbox:
+          data_type: text
+          default_value: .
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: rp_mbox
+          order: 20
+          size:
+            - 0
+        rp_txt:
+          data_type: text
+          default_value: .
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: rp_txt
+          order: 21
+          size:
+            - 0
+        serial:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: serial
+          order: 33
+          size:
+            - 0
+        ttl:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: ttl
+          order: 10
+          size:
+            - 0
+        type:
+          data_type: integer
+          default_value: 0
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: type
+          order: 8
+          size:
+            - 0
+        vmps:
+          data_type: integer
+          default_value: -1
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: vmps
+          order: 38
+          size:
+            - 0
+        wks:
+          data_type: integer
+          default_value: -1
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: wks
+          order: 18
+          size:
+            - 0
+        zone:
+          data_type: integer
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 1
+          name: zone
+          order: 7
+          size:
+            - 0
+      indices: []
+      name: hosts
+      options: []
+      order: 11
+    keys:
+      constraints:
+        - deferrable: 1
+          expression: ''
+          fields:
+            - id
+          match_type: ''
+          name: ''
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: PRIMARY KEY
+        - deferrable: 1
+          expression: ''
+          fields:
+            - name
+            - ref
+            - type
+          match_type: ''
+          name: keyname_key
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: UNIQUE
+      fields:
+        algorithm:
+          data_type: integer
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: algorithm
+          order: 13
+          size:
+            - 0
+        cdate:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: cdate
+          order: 1
+          size:
+            - 0
+        comment:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: comment
+          order: 19
+          size:
+            - 0
+        cuser:
+          data_type: char
+          default_value: unknown
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: cuser
+          order: 2
+          size:
+            - 8
+        expiration:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: expiration
+          order: 5
+          size:
+            - 0
+        id:
+          data_type: integer
+          default_value: ~
+          is_auto_increment: 1
+          is_nullable: 0
+          is_primary_key: 1
+          is_unique: 0
+          name: id
+          order: 6
+          size:
+            - 0
+        keysize:
+          data_type: integer
+          default_value: -1
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: keysize
+          order: 15
+          size:
+            - 0
+        keytype:
+          data_type: integer
+          default_value: 0
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: keytype
+          order: 10
+          size:
+            - 0
+        mdate:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: mdate
+          order: 3
+          size:
+            - 0
+        mode:
+          data_type: integer
+          default_value: 0
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: mode
+          order: 14
+          size:
+            - 0
+        muser:
+          data_type: char
+          default_value: unknown
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: muser
+          order: 4
+          size:
+            - 8
+        name:
+          data_type: text
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 1
+          name: name
+          order: 9
+          size:
+            - 0
+        nametype:
+          data_type: integer
+          default_value: 0
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: nametype
+          order: 11
+          size:
+            - 0
+        protocol:
+          data_type: integer
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: protocol
+          order: 12
+          size:
+            - 0
+        publickey:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: publickey
+          order: 17
+          size:
+            - 0
+        ref:
+          data_type: integer
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 1
+          name: ref
+          order: 8
+          size:
+            - 0
+        secretkey:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: secretkey
+          order: 18
+          size:
+            - 0
+        strength:
+          data_type: integer
+          default_value: 0
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: strength
+          order: 16
+          size:
+            - 0
+        type:
+          data_type: integer
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 1
+          name: type
+          order: 7
+          size:
+            - 0
+      indices: []
+      name: keys
+      options: []
+      order: 12
+    lastlog:
+      constraints:
+        - deferrable: 1
+          expression: ''
+          fields:
+            - id
+          match_type: ''
+          name: ''
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: PRIMARY KEY
+      fields:
+        date:
+          data_type: integer
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: date
+          order: 4
+          size:
+            - 0
+        host:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: host
+          order: 9
+          size:
+            - 0
+        host2:
+          data_type: char
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: host2
+          order: 8
+          size:
+            - 40
+        id:
+          data_type: integer
+          default_value: !!perl/ref
+            =: nextval(('"lastlog_id_seq"'::text)::regclass)
+          is_nullable: 0
+          is_primary_key: 1
+          is_unique: 0
+          name: id
+          order: 1
+          size:
+            - 0
+        ip:
+          data_type: inet
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: ip
+          order: 7
+          size:
+            - 0
+        ldate:
+          data_type: integer
+          default_value: -1
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: ldate
+          order: 6
+          size:
+            - 0
+        sid:
+          data_type: integer
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: sid
+          order: 2
+          size:
+            - 0
+        state:
+          data_type: integer
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: state
+          order: 5
+          size:
+            - 0
+        uid:
+          data_type: integer
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: uid
+          order: 3
+          size:
+            - 0
+      indices: []
+      name: lastlog
+      options: []
+      order: 13
+    leases:
+      constraints:
+        - deferrable: 1
+          expression: ''
+          fields:
+            - id
+          match_type: ''
+          name: ''
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: PRIMARY KEY
+      fields:
+        host:
+          data_type: integer
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: host
+          order: 3
+          size:
+            - 0
+        hostname:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: hostname
+          order: 11
+          size:
+            - 0
+        id:
+          data_type: integer
+          default_value: ~
+          is_auto_increment: 1
+          is_nullable: 0
+          is_primary_key: 1
+          is_unique: 0
+          name: id
+          order: 1
+          size:
+            - 0
+        info:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: info
+          order: 12
+          size:
+            - 0
+        ip:
+          data_type: inet
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: ip
+          order: 4
+          size:
+            - 0
+        ipv6:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: ipv6
+          order: 5
+          size:
+            - 0
+        lend:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: lend
+          order: 7
+          size:
+            - 0
+        lstart:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: lstart
+          order: 6
+          size:
+            - 0
+        mac:
+          data_type: char
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: mac
+          order: 8
+          size:
+            - 12
+        server:
+          data_type: integer
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: server
+          order: 2
+          size:
+            - 0
+        state:
+          data_type: integer
+          default_value: 0
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: state
+          order: 9
+          size:
+            - 0
+        uid:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: uid
+          order: 10
+          size:
+            - 0
+      indices: []
+      name: leases
+      options: []
+      order: 14
+    mx_entries:
+      constraints:
+        - deferrable: 1
+          expression: ''
+          fields:
+            - id
+          match_type: ''
+          name: ''
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: PRIMARY KEY
+      fields:
+        comment:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: comment
+          order: 6
+          size:
+            - 0
+        id:
+          data_type: integer
+          default_value: !!perl/ref
+            =: nextval(('"mx_entries_id_seq"'::text)::regclass)
+          is_nullable: 0
+          is_primary_key: 1
+          is_unique: 0
+          name: id
+          order: 1
+          size:
+            - 0
+        mx:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: mx
+          order: 5
+          size:
+            - 0
+        pri:
+          data_type: integer
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: pri
+          order: 4
+          size:
+            - 0
+        ref:
+          data_type: integer
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: ref
+          order: 3
+          size:
+            - 0
+        type:
+          data_type: integer
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: type
+          order: 2
+          size:
+            - 0
+      indices: []
+      name: mx_entries
+      options: []
+      order: 15
+    mx_templates:
+      constraints:
+        - deferrable: 1
+          expression: ''
+          fields:
+            - id
+          match_type: ''
+          name: ''
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: PRIMARY KEY
+      fields:
+        alevel:
+          data_type: integer
+          default_value: 0
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: alevel
+          order: 8
+          size:
+            - 0
+        cdate:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: cdate
+          order: 1
+          size:
+            - 0
+        comment:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: comment
+          order: 10
+          size:
+            - 0
+        cuser:
+          data_type: char
+          default_value: unknown
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: cuser
+          order: 2
+          size:
+            - 8
+        expiration:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: expiration
+          order: 5
+          size:
+            - 0
+        id:
+          data_type: integer
+          default_value: !!perl/ref
+            =: nextval(('"mx_templates_id_seq"'::text)::regclass)
+          is_nullable: 0
+          is_primary_key: 1
+          is_unique: 0
+          name: id
+          order: 6
+          size:
+            - 0
+        mdate:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: mdate
+          order: 3
+          size:
+            - 0
+        muser:
+          data_type: char
+          default_value: unknown
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: muser
+          order: 4
+          size:
+            - 8
+        name:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: name
+          order: 9
+          size:
+            - 0
+        zone:
+          data_type: integer
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: zone
+          order: 7
+          size:
+            - 0
+      indices: []
+      name: mx_templates
+      options: []
+      order: 16
+    nets:
+      constraints:
+        - deferrable: 1
+          expression: ''
+          fields:
+            - net
+            - server
+          match_type: ''
+          name: ''
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: PRIMARY KEY
+        - deferrable: 1
+          expression: ''
+          fields:
+            - id
+          match_type: ''
+          name: nets_id_key
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: UNIQUE
+      fields:
+        alevel:
+          data_type: integer
+          default_value: 0
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: alevel
+          order: 13
+          size:
+            - 0
+        cdate:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: cdate
+          order: 1
+          size:
+            - 0
+        comment:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: comment
+          order: 21
+          size:
+            - 0
+        cuser:
+          data_type: char
+          default_value: unknown
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: cuser
+          order: 2
+          size:
+            - 8
+        dummy:
+          data_type: boolean
+          default_value: !!perl/ref
+            =: false
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: dummy
+          order: 22
+          size:
+            - 0
+        expiration:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: expiration
+          order: 5
+          size:
+            - 0
+        id:
+          data_type: integer
+          default_value: !!perl/ref
+            =: nextval(('"nets_id_seq"'::text)::regclass)
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 1
+          name: id
+          order: 6
+          size:
+            - 0
+        ipv6:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: ipv6
+          order: 15
+          size:
+            - 0
+        mdate:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: mdate
+          order: 3
+          size:
+            - 0
+        muser:
+          data_type: char
+          default_value: unknown
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: muser
+          order: 4
+          size:
+            - 8
+        name:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: name
+          order: 9
+          size:
+            - 0
+        net:
+          data_type: cidr
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 1
+          is_unique: 0
+          name: net
+          order: 10
+          size:
+            - 0
+        netname:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: netname
+          order: 8
+          size:
+            - 0
+        no_dhcp:
+          data_type: boolean
+          default_value: !!perl/ref
+            =: false
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: no_dhcp
+          order: 18
+          size:
+            - 0
+        range_end:
+          data_type: inet
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: range_end
+          order: 20
+          size:
+            - 0
+        range_start:
+          data_type: inet
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: range_start
+          order: 19
+          size:
+            - 0
+        rp_mbox:
+          data_type: text
+          default_value: .
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: rp_mbox
+          order: 16
+          size:
+            - 0
+        rp_txt:
+          data_type: text
+          default_value: .
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: rp_txt
+          order: 17
+          size:
+            - 0
+        server:
+          data_type: integer
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 1
+          is_unique: 0
+          name: server
+          order: 7
+          size:
+            - 0
+        subnet:
+          data_type: boolean
+          default_value: !!perl/ref
+            =: true
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: subnet
+          order: 11
+          size:
+            - 0
+        type:
+          data_type: integer
+          default_value: 0
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: type
+          order: 14
+          size:
+            - 0
+        vlan:
+          data_type: integer
+          default_value: -1
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: vlan
+          order: 12
+          size:
+            - 0
+      indices: []
+      name: nets
+      options: []
+      order: 17
+    news:
+      constraints:
+        - deferrable: 1
+          expression: ''
+          fields:
+            - id
+          match_type: ''
+          name: ''
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: PRIMARY KEY
+      fields:
+        cdate:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: cdate
+          order: 1
+          size:
+            - 0
+        cuser:
+          data_type: char
+          default_value: unknown
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: cuser
+          order: 2
+          size:
+            - 8
+        expiration:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: expiration
+          order: 5
+          size:
+            - 0
+        id:
+          data_type: integer
+          default_value: !!perl/ref
+            =: nextval(('"news_id_seq"'::text)::regclass)
+          is_nullable: 0
+          is_primary_key: 1
+          is_unique: 0
+          name: id
+          order: 6
+          size:
+            - 0
+        info:
+          data_type: text
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: info
+          order: 8
+          size:
+            - 0
+        mdate:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: mdate
+          order: 3
+          size:
+            - 0
+        muser:
+          data_type: char
+          default_value: unknown
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: muser
+          order: 4
+          size:
+            - 8
+        server:
+          data_type: integer
+          default_value: -1
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: server
+          order: 7
+          size:
+            - 0
+      indices: []
+      name: news
+      options: []
+      order: 18
+    ns_entries:
+      constraints:
+        - deferrable: 1
+          expression: ''
+          fields:
+            - id
+          match_type: ''
+          name: ''
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: PRIMARY KEY
+      fields:
+        comment:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: comment
+          order: 5
+          size:
+            - 0
+        id:
+          data_type: integer
+          default_value: !!perl/ref
+            =: nextval(('"ns_entries_id_seq"'::text)::regclass)
+          is_nullable: 0
+          is_primary_key: 1
+          is_unique: 0
+          name: id
+          order: 1
+          size:
+            - 0
+        ns:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: ns
+          order: 4
+          size:
+            - 0
+        ref:
+          data_type: integer
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: ref
+          order: 3
+          size:
+            - 0
+        type:
+          data_type: integer
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: type
+          order: 2
+          size:
+            - 0
+      indices: []
+      name: ns_entries
+      options: []
+      order: 19
+    printer_classes:
+      constraints:
+        - deferrable: 1
+          expression: ''
+          fields:
+            - id
+          match_type: ''
+          name: ''
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: PRIMARY KEY
+        - deferrable: 1
+          expression: ''
+          fields:
+            - name
+          match_type: ''
+          name: printer_classes_name_key
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: UNIQUE
+      fields:
+        cdate:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: cdate
+          order: 1
+          size:
+            - 0
+        comment:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: comment
+          order: 8
+          size:
+            - 0
+        cuser:
+          data_type: char
+          default_value: unknown
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: cuser
+          order: 2
+          size:
+            - 8
+        expiration:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: expiration
+          order: 5
+          size:
+            - 0
+        id:
+          data_type: integer
+          default_value: !!perl/ref
+            =: nextval(('"printer_classes_id_seq"'::text)::regclass)
+          is_nullable: 0
+          is_primary_key: 1
+          is_unique: 0
+          name: id
+          order: 6
+          size:
+            - 0
+        mdate:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: mdate
+          order: 3
+          size:
+            - 0
+        muser:
+          data_type: char
+          default_value: unknown
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: muser
+          order: 4
+          size:
+            - 8
+        name:
+          data_type: text
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 1
+          name: name
+          order: 7
+          size:
+            - 0
+      indices: []
+      name: printer_classes
+      options: []
+      order: 20
+    printer_entries:
+      constraints:
+        - deferrable: 1
+          expression: ''
+          fields:
+            - id
+          match_type: ''
+          name: ''
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: PRIMARY KEY
+      fields:
+        comment:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: comment
+          order: 5
+          size:
+            - 0
+        id:
+          data_type: integer
+          default_value: !!perl/ref
+            =: nextval(('"printer_entries_id_seq"'::text)::regclass)
+          is_nullable: 0
+          is_primary_key: 1
+          is_unique: 0
+          name: id
+          order: 1
+          size:
+            - 0
+        printer:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: printer
+          order: 4
+          size:
+            - 0
+        ref:
+          data_type: integer
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: ref
+          order: 3
+          size:
+            - 0
+        type:
+          data_type: integer
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: type
+          order: 2
+          size:
+            - 0
+      indices: []
+      name: printer_entries
+      options: []
+      order: 21
+    root_servers:
+      constraints:
+        - deferrable: 1
+          expression: ''
+          fields:
+            - id
+          match_type: ''
+          name: ''
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: PRIMARY KEY
+      fields:
+        domain:
+          data_type: text
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: domain
+          order: 4
+          size:
+            - 0
+        id:
+          data_type: integer
+          default_value: !!perl/ref
+            =: nextval(('"root_servers_id_seq"'::text)::regclass)
+          is_nullable: 0
+          is_primary_key: 1
+          is_unique: 0
+          name: id
+          order: 1
+          size:
+            - 0
+        server:
+          data_type: integer
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: server
+          order: 2
+          size:
+            - 0
+        ttl:
+          data_type: integer
+          default_value: 3600000
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: ttl
+          order: 3
+          size:
+            - 0
+        type:
+          data_type: text
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: type
+          order: 5
+          size:
+            - 0
+        value:
+          data_type: text
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: value
+          order: 6
+          size:
+            - 0
+      indices: []
+      name: root_servers
+      options: []
+      order: 22
+    servers:
+      constraints:
+        - deferrable: 1
+          expression: ''
+          fields:
+            - id
+          match_type: ''
+          name: ''
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: PRIMARY KEY
+        - deferrable: 1
+          expression: ''
+          fields:
+            - name
+          match_type: ''
+          name: servers_name_key
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: UNIQUE
+      fields:
+        authnxdomain:
+          data_type: char
+          default_value: D
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: authnxdomain
+          order: 34
+          size:
+            - 1
+        cdate:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: cdate
+          order: 1
+          size:
+            - 0
+        checknames_m:
+          data_type: char
+          default_value: D
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: checknames_m
+          order: 29
+          size:
+            - 1
+        checknames_r:
+          data_type: char
+          default_value: D
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: checknames_r
+          order: 31
+          size:
+            - 1
+        checknames_s:
+          data_type: char
+          default_value: D
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: checknames_s
+          order: 30
+          size:
+            - 1
+        comment:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: comment
+          order: 53
+          size:
+            - 0
+        cuser:
+          data_type: char
+          default_value: unknown
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: cuser
+          order: 2
+          size:
+            - 8
+        df_loadbalmax:
+          data_type: integer
+          default_value: 3
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: df_loadbalmax
+          order: 49
+          size:
+            - 0
+        df_max_delay:
+          data_type: integer
+          default_value: 60
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: df_max_delay
+          order: 45
+          size:
+            - 0
+        df_max_uupdates:
+          data_type: integer
+          default_value: 10
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: df_max_uupdates
+          order: 46
+          size:
+            - 0
+        df_mclt:
+          data_type: integer
+          default_value: 3600
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: df_mclt
+          order: 47
+          size:
+            - 0
+        df_port:
+          data_type: integer
+          default_value: 519
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: df_port
+          order: 44
+          size:
+            - 0
+        df_split:
+          data_type: integer
+          default_value: 128
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: df_split
+          order: 48
+          size:
+            - 0
+        dhcp_flags:
+          data_type: integer
+          default_value: 0
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: dhcp_flags
+          order: 11
+          size:
+            - 0
+        dhcp_mode:
+          data_type: integer
+          default_value: 1
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: dhcp_mode
+          order: 10
+          size:
+            - 0
+        dialup:
+          data_type: char
+          default_value: D
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: dialup
+          order: 35
+          size:
+            - 1
+        directory:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: directory
+          order: 15
+          size:
+            - 0
+        dump_file:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: dump_file
+          order: 17
+          size:
+            - 0
+        expiration:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: expiration
+          order: 5
+          size:
+            - 0
+        expire:
+          data_type: integer
+          default_value: 2419200
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: expire
+          order: 41
+          size:
+            - 0
+        forward:
+          data_type: char
+          default_value: D
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: forward
+          order: 28
+          size:
+            - 1
+        hostaddr:
+          data_type: inet
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: hostaddr
+          order: 51
+          size:
+            - 0
+        hostmaster:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: hostmaster
+          order: 52
+          size:
+            - 0
+        hostname:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: hostname
+          order: 50
+          size:
+            - 0
+        id:
+          data_type: integer
+          default_value: !!perl/ref
+            =: nextval(('"servers_id_seq"'::text)::regclass)
+          is_nullable: 0
+          is_primary_key: 1
+          is_unique: 0
+          name: id
+          order: 6
+          size:
+            - 0
+        ipv6:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: ipv6
+          order: 43
+          size:
+            - 0
+        lastrun:
+          data_type: integer
+          default_value: -1
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: lastrun
+          order: 54
+          size:
+            - 0
+        listen_on_port:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: listen_on_port
+          order: 26
+          size:
+            - 0
+        masterserver:
+          data_type: integer
+          default_value: -1
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: masterserver
+          order: 13
+          size:
+            - 0
+        mdate:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: mdate
+          order: 3
+          size:
+            - 0
+        memstats_file:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: memstats_file
+          order: 20
+          size:
+            - 0
+        minimum:
+          data_type: integer
+          default_value: 86400
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: minimum
+          order: 42
+          size:
+            - 0
+        multiple_cnames:
+          data_type: char
+          default_value: D
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: multiple_cnames
+          order: 36
+          size:
+            - 1
+        muser:
+          data_type: char
+          default_value: unknown
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: muser
+          order: 4
+          size:
+            - 8
+        name:
+          data_type: text
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 1
+          name: name
+          order: 7
+          size:
+            - 0
+        named_ca:
+          data_type: text
+          default_value: named.ca
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: named_ca
+          order: 21
+          size:
+            - 0
+        named_flags:
+          data_type: integer
+          default_value: 0
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: named_flags
+          order: 12
+          size:
+            - 0
+        named_xfer:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: named_xfer
+          order: 18
+          size:
+            - 0
+        nnotify:
+          data_type: char
+          default_value: D
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: nnotify
+          order: 32
+          size:
+            - 1
+        no_roots:
+          data_type: boolean
+          default_value: !!perl/ref
+            =: false
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: no_roots
+          order: 9
+          size:
+            - 0
+        pid_file:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: pid_file
+          order: 16
+          size:
+            - 0
+        pzone_path:
+          data_type: text
+          default_value: ''
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: pzone_path
+          order: 22
+          size:
+            - 0
+        query_src_ip:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: query_src_ip
+          order: 24
+          size:
+            - 0
+        query_src_port:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: query_src_port
+          order: 25
+          size:
+            - 0
+        recursion:
+          data_type: char
+          default_value: D
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: recursion
+          order: 33
+          size:
+            - 1
+        refresh:
+          data_type: integer
+          default_value: 43200
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: refresh
+          order: 39
+          size:
+            - 0
+        retry:
+          data_type: integer
+          default_value: 3600
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: retry
+          order: 40
+          size:
+            - 0
+        rfc2308_type1:
+          data_type: char
+          default_value: D
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: rfc2308_type1
+          order: 37
+          size:
+            - 1
+        stats_file:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: stats_file
+          order: 19
+          size:
+            - 0
+        szone_path:
+          data_type: text
+          default_value: NS2/
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: szone_path
+          order: 23
+          size:
+            - 0
+        transfer_source:
+          data_type: inet
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: transfer_source
+          order: 27
+          size:
+            - 0
+        ttl:
+          data_type: integer
+          default_value: 86400
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: ttl
+          order: 38
+          size:
+            - 0
+        version:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: version
+          order: 14
+          size:
+            - 0
+        zones_only:
+          data_type: boolean
+          default_value: !!perl/ref
+            =: false
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: zones_only
+          order: 8
+          size:
+            - 0
+      indices: []
+      name: servers
+      options: []
+      order: 23
+    settings:
+      constraints:
+        - deferrable: 1
+          expression: ''
+          fields:
+            - setting
+          match_type: ''
+          name: ''
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: PRIMARY KEY
+      fields:
+        ivalue:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: ivalue
+          order: 3
+          size:
+            - 0
+        setting:
+          data_type: text
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 1
+          is_unique: 0
+          name: setting
+          order: 1
+          size:
+            - 0
+        value:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: value
+          order: 2
+          size:
+            - 0
+      indices: []
+      name: settings
+      options: []
+      order: 24
+    srv_entries:
+      constraints:
+        - deferrable: 1
+          expression: ''
+          fields:
+            - id
+          match_type: ''
+          name: ''
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: PRIMARY KEY
+      fields:
+        comment:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: comment
+          order: 8
+          size:
+            - 0
+        id:
+          data_type: integer
+          default_value: !!perl/ref
+            =: nextval(('"srv_entries_id_seq"'::text)::regclass)
+          is_nullable: 0
+          is_primary_key: 1
+          is_unique: 0
+          name: id
+          order: 1
+          size:
+            - 0
+        port:
+          data_type: integer
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: port
+          order: 6
+          size:
+            - 0
+        pri:
+          data_type: integer
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: pri
+          order: 4
+          size:
+            - 0
+        ref:
+          data_type: integer
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: ref
+          order: 3
+          size:
+            - 0
+        target:
+          data_type: text
+          default_value: .
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: target
+          order: 7
+          size:
+            - 0
+        type:
+          data_type: integer
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: type
+          order: 2
+          size:
+            - 0
+        weight:
+          data_type: integer
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: weight
+          order: 5
+          size:
+            - 0
+      indices: []
+      name: srv_entries
+      options: []
+      order: 25
+    txt_entries:
+      constraints:
+        - deferrable: 1
+          expression: ''
+          fields:
+            - id
+          match_type: ''
+          name: ''
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: PRIMARY KEY
+      fields:
+        comment:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: comment
+          order: 5
+          size:
+            - 0
+        id:
+          data_type: integer
+          default_value: !!perl/ref
+            =: nextval(('"txt_entries_id_seq"'::text)::regclass)
+          is_nullable: 0
+          is_primary_key: 1
+          is_unique: 0
+          name: id
+          order: 1
+          size:
+            - 0
+        ref:
+          data_type: integer
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: ref
+          order: 3
+          size:
+            - 0
+        txt:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: txt
+          order: 4
+          size:
+            - 0
+        type:
+          data_type: integer
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: type
+          order: 2
+          size:
+            - 0
+      indices: []
+      name: txt_entries
+      options: []
+      order: 26
+    user_groups:
+      constraints:
+        - deferrable: 1
+          expression: ''
+          fields:
+            - id
+          match_type: ''
+          name: ''
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: PRIMARY KEY
+        - deferrable: 1
+          expression: ''
+          fields:
+            - name
+          match_type: ''
+          name: user_groups_name_key
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: UNIQUE
+      fields:
+        comment:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: comment
+          order: 3
+          size:
+            - 0
+        id:
+          data_type: integer
+          default_value: !!perl/ref
+            =: nextval(('"user_groups_id_seq"'::text)::regclass)
+          is_nullable: 0
+          is_primary_key: 1
+          is_unique: 0
+          name: id
+          order: 1
+          size:
+            - 0
+        name:
+          data_type: text
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 1
+          name: name
+          order: 2
+          size:
+            - 0
+      indices: []
+      name: user_groups
+      options: []
+      order: 27
+    user_rights:
+      constraints:
+        - deferrable: 1
+          expression: ''
+          fields:
+            - id
+          match_type: ''
+          name: ''
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: PRIMARY KEY
+      fields:
+        id:
+          data_type: integer
+          default_value: !!perl/ref
+            =: nextval(('"user_rights_id_seq"'::text)::regclass)
+          is_nullable: 0
+          is_primary_key: 1
+          is_unique: 0
+          name: id
+          order: 1
+          size:
+            - 0
+        ref:
+          data_type: integer
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: ref
+          order: 3
+          size:
+            - 0
+        rref:
+          data_type: integer
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: rref
+          order: 5
+          size:
+            - 0
+        rtype:
+          data_type: integer
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: rtype
+          order: 4
+          size:
+            - 0
+        rule:
+          data_type: char
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: rule
+          order: 6
+          size:
+            - 40
+        type:
+          data_type: integer
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: type
+          order: 2
+          size:
+            - 0
+      indices: []
+      name: user_rights
+      options: []
+      order: 28
+    users:
+      constraints:
+        - deferrable: 1
+          expression: ''
+          fields:
+            - id
+          match_type: ''
+          name: ''
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: PRIMARY KEY
+        - deferrable: 1
+          expression: ''
+          fields:
+            - username
+          match_type: ''
+          name: username_key
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: UNIQUE
+      fields:
+        cdate:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: cdate
+          order: 1
+          size:
+            - 0
+        comment:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: comment
+          order: 20
+          size:
+            - 0
+        cuser:
+          data_type: char
+          default_value: unknown
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: cuser
+          order: 2
+          size:
+            - 8
+        email:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: email
+          order: 11
+          size:
+            - 0
+        expiration:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: expiration
+          order: 5
+          size:
+            - 0
+        flags:
+          data_type: integer
+          default_value: 0
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: flags
+          order: 19
+          size:
+            - 0
+        gid:
+          data_type: integer
+          default_value: -1
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: gid
+          order: 7
+          size:
+            - 0
+        id:
+          data_type: integer
+          default_value: !!perl/ref
+            =: nextval(('"users_id_seq"'::text)::regclass)
+          is_nullable: 0
+          is_primary_key: 1
+          is_unique: 0
+          name: id
+          order: 6
+          size:
+            - 0
+        last:
+          data_type: integer
+          default_value: 0
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: last
+          order: 15
+          size:
+            - 0
+        last_from:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: last_from
+          order: 17
+          size:
+            - 0
+        last_pwd:
+          data_type: integer
+          default_value: 0
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: last_pwd
+          order: 16
+          size:
+            - 0
+        mdate:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: mdate
+          order: 3
+          size:
+            - 0
+        muser:
+          data_type: char
+          default_value: unknown
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: muser
+          order: 4
+          size:
+            - 8
+        name:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: name
+          order: 10
+          size:
+            - 0
+        password:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: password
+          order: 9
+          size:
+            - 0
+        search_opts:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: search_opts
+          order: 18
+          size:
+            - 0
+        server:
+          data_type: integer
+          default_value: -1
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: server
+          order: 13
+          size:
+            - 0
+        superuser:
+          data_type: boolean
+          default_value: !!perl/ref
+            =: false
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: superuser
+          order: 12
+          size:
+            - 0
+        username:
+          data_type: text
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 1
+          name: username
+          order: 8
+          size:
+            - 0
+        zone:
+          data_type: integer
+          default_value: -1
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: zone
+          order: 14
+          size:
+            - 0
+      indices: []
+      name: users
+      options: []
+      order: 29
+    utmp:
+      constraints:
+        - deferrable: 1
+          expression: ''
+          fields:
+            - cookie
+          match_type: ''
+          name: ''
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: PRIMARY KEY
+      fields:
+        addr:
+          data_type: cidr
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: addr
+          order: 6
+          size:
+            - 0
+        auth:
+          data_type: boolean
+          default_value: !!perl/ref
+            =: false
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: auth
+          order: 8
+          size:
+            - 0
+        cookie:
+          data_type: char
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 1
+          is_unique: 0
+          name: cookie
+          order: 1
+          size:
+            - 32
+        gid:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: gid
+          order: 3
+          size:
+            - 0
+        last:
+          data_type: integer
+          default_value: 0
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: last
+          order: 16
+          size:
+            - 0
+        login:
+          data_type: integer
+          default_value: 0
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: login
+          order: 15
+          size:
+            - 0
+        mode:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: mode
+          order: 9
+          size:
+            - 0
+        searchdomain:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: searchdomain
+          order: 18
+          size:
+            - 0
+        searchopts:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: searchopts
+          order: 17
+          size:
+            - 0
+        searchpattern:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: searchpattern
+          order: 19
+          size:
+            - 0
+        server:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: server
+          order: 12
+          size:
+            - 0
+        serverid:
+          data_type: integer
+          default_value: -1
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: serverid
+          order: 11
+          size:
+            - 0
+        sid:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: sid
+          order: 4
+          size:
+            - 0
+        superuser:
+          data_type: boolean
+          default_value: !!perl/ref
+            =: false
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: superuser
+          order: 7
+          size:
+            - 0
+        uid:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: uid
+          order: 2
+          size:
+            - 0
+        uname:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: uname
+          order: 5
+          size:
+            - 0
+        w:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: w
+          order: 10
+          size:
+            - 0
+        zone:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: zone
+          order: 14
+          size:
+            - 0
+        zoneid:
+          data_type: integer
+          default_value: -1
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: zoneid
+          order: 13
+          size:
+            - 0
+      indices: []
+      name: utmp
+      options: []
+      order: 30
+    vlans:
+      constraints:
+        - deferrable: 1
+          expression: ''
+          fields:
+            - name
+            - server
+          match_type: ''
+          name: ''
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: PRIMARY KEY
+        - deferrable: 1
+          expression: ''
+          fields:
+            - id
+          match_type: ''
+          name: vlans_id_key
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: UNIQUE
+      fields:
+        cdate:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: cdate
+          order: 1
+          size:
+            - 0
+        comment:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: comment
+          order: 10
+          size:
+            - 0
+        cuser:
+          data_type: char
+          default_value: unknown
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: cuser
+          order: 2
+          size:
+            - 8
+        description:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: description
+          order: 9
+          size:
+            - 0
+        expiration:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: expiration
+          order: 5
+          size:
+            - 0
+        id:
+          data_type: integer
+          default_value: !!perl/ref
+            =: nextval(('"vlans_id_seq"'::text)::regclass)
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 1
+          name: id
+          order: 6
+          size:
+            - 0
+        mdate:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: mdate
+          order: 3
+          size:
+            - 0
+        muser:
+          data_type: char
+          default_value: unknown
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: muser
+          order: 4
+          size:
+            - 8
+        name:
+          data_type: text
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 1
+          is_unique: 0
+          name: name
+          order: 8
+          size:
+            - 0
+        server:
+          data_type: integer
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 1
+          is_unique: 0
+          name: server
+          order: 7
+          size:
+            - 0
+        vlanno:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: vlanno
+          order: 11
+          size:
+            - 0
+      indices: []
+      name: vlans
+      options: []
+      order: 31
+    vmps:
+      constraints:
+        - deferrable: 1
+          expression: ''
+          fields:
+            - name
+            - server
+          match_type: ''
+          name: ''
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: PRIMARY KEY
+        - deferrable: 1
+          expression: ''
+          fields:
+            - id
+          match_type: ''
+          name: vmps_id_key
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: UNIQUE
+      fields:
+        cdate:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: cdate
+          order: 1
+          size:
+            - 0
+        comment:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: comment
+          order: 13
+          size:
+            - 0
+        cuser:
+          data_type: char
+          default_value: unknown
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: cuser
+          order: 2
+          size:
+            - 8
+        description:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: description
+          order: 9
+          size:
+            - 0
+        expiration:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: expiration
+          order: 5
+          size:
+            - 0
+        fallback:
+          data_type: integer
+          default_value: -1
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: fallback
+          order: 12
+          size:
+            - 0
+        id:
+          data_type: integer
+          default_value: !!perl/ref
+            =: nextval(('"vmps_id_seq"'::text)::regclass)
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 1
+          name: id
+          order: 6
+          size:
+            - 0
+        mdate:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: mdate
+          order: 3
+          size:
+            - 0
+        mode:
+          data_type: integer
+          default_value: 0
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: mode
+          order: 10
+          size:
+            - 0
+        muser:
+          data_type: char
+          default_value: unknown
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: muser
+          order: 4
+          size:
+            - 8
+        name:
+          data_type: text
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 1
+          is_unique: 0
+          name: name
+          order: 8
+          size:
+            - 0
+        nodomainreq:
+          data_type: integer
+          default_value: 0
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: nodomainreq
+          order: 11
+          size:
+            - 0
+        server:
+          data_type: integer
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 1
+          is_unique: 0
+          name: server
+          order: 7
+          size:
+            - 0
+      indices: []
+      name: vmps
+      options: []
+      order: 32
+    wks_entries:
+      constraints:
+        - deferrable: 1
+          expression: ''
+          fields:
+            - id
+          match_type: ''
+          name: ''
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: PRIMARY KEY
+      fields:
+        comment:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: comment
+          order: 6
+          size:
+            - 0
+        id:
+          data_type: integer
+          default_value: !!perl/ref
+            =: nextval(('"wks_entries_id_seq"'::text)::regclass)
+          is_nullable: 0
+          is_primary_key: 1
+          is_unique: 0
+          name: id
+          order: 1
+          size:
+            - 0
+        proto:
+          data_type: char
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: proto
+          order: 4
+          size:
+            - 10
+        ref:
+          data_type: integer
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: ref
+          order: 3
+          size:
+            - 0
+        services:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: services
+          order: 5
+          size:
+            - 0
+        type:
+          data_type: integer
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: type
+          order: 2
+          size:
+            - 0
+      indices: []
+      name: wks_entries
+      options: []
+      order: 33
+    wks_templates:
+      constraints:
+        - deferrable: 1
+          expression: ''
+          fields:
+            - id
+          match_type: ''
+          name: ''
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: PRIMARY KEY
+      fields:
+        alevel:
+          data_type: integer
+          default_value: 0
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: alevel
+          order: 8
+          size:
+            - 0
+        cdate:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: cdate
+          order: 1
+          size:
+            - 0
+        comment:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: comment
+          order: 10
+          size:
+            - 0
+        cuser:
+          data_type: char
+          default_value: unknown
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: cuser
+          order: 2
+          size:
+            - 8
+        expiration:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: expiration
+          order: 5
+          size:
+            - 0
+        id:
+          data_type: integer
+          default_value: !!perl/ref
+            =: nextval(('"wks_templates_id_seq"'::text)::regclass)
+          is_nullable: 0
+          is_primary_key: 1
+          is_unique: 0
+          name: id
+          order: 6
+          size:
+            - 0
+        mdate:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: mdate
+          order: 3
+          size:
+            - 0
+        muser:
+          data_type: char
+          default_value: unknown
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: muser
+          order: 4
+          size:
+            - 8
+        name:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: name
+          order: 9
+          size:
+            - 0
+        server:
+          data_type: integer
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: server
+          order: 7
+          size:
+            - 0
+      indices: []
+      name: wks_templates
+      options: []
+      order: 34
+    zones:
+      constraints:
+        - deferrable: 1
+          expression: ''
+          fields:
+            - name
+            - server
+          match_type: ''
+          name: ''
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: PRIMARY KEY
+        - deferrable: 1
+          expression: ''
+          fields:
+            - id
+          match_type: ''
+          name: zones_id_key
+          on_delete: ''
+          on_update: ''
+          options: []
+          reference_fields: []
+          reference_table: ''
+          type: UNIQUE
+      fields:
+        active:
+          data_type: boolean
+          default_value: !!perl/ref
+            =: true
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: active
+          order: 8
+          size:
+            - 0
+        cdate:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: cdate
+          order: 1
+          size:
+            - 0
+        chknames:
+          data_type: char
+          default_value: D
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: chknames
+          order: 16
+          size:
+            - 1
+        class:
+          data_type: char
+          default_value: in
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: class
+          order: 17
+          size:
+            - 2
+        comment:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: comment
+          order: 28
+          size:
+            - 0
+        cuser:
+          data_type: char
+          default_value: unknown
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: cuser
+          order: 2
+          size:
+            - 8
+        dummy:
+          data_type: boolean
+          default_value: !!perl/ref
+            =: false
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: dummy
+          order: 9
+          size:
+            - 0
+        expiration:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: expiration
+          order: 5
+          size:
+            - 0
+        expire:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: expire
+          order: 24
+          size:
+            - 0
+        flags:
+          data_type: integer
+          default_value: 0
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: flags
+          order: 13
+          size:
+            - 0
+        forward:
+          data_type: char
+          default_value: D
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: forward
+          order: 14
+          size:
+            - 1
+        hostmaster:
+          data_type: text
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: hostmaster
+          order: 19
+          size:
+            - 0
+        id:
+          data_type: integer
+          default_value: !!perl/ref
+            =: nextval(('"zones_id_seq"'::text)::regclass)
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 1
+          name: id
+          order: 6
+          size:
+            - 0
+        mdate:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: mdate
+          order: 3
+          size:
+            - 0
+        minimum:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: minimum
+          order: 25
+          size:
+            - 0
+        muser:
+          data_type: char
+          default_value: unknown
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: muser
+          order: 4
+          size:
+            - 8
+        name:
+          data_type: text
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 1
+          is_unique: 0
+          name: name
+          order: 18
+          size:
+            - 0
+        nnotify:
+          data_type: char
+          default_value: D
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: nnotify
+          order: 15
+          size:
+            - 1
+        noreverse:
+          data_type: boolean
+          default_value: !!perl/ref
+            =: false
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: noreverse
+          order: 12
+          size:
+            - 0
+        parent:
+          data_type: integer
+          default_value: -1
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: parent
+          order: 30
+          size:
+            - 0
+        rdate:
+          data_type: integer
+          default_value: 0
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: rdate
+          order: 31
+          size:
+            - 0
+        refresh:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: refresh
+          order: 22
+          size:
+            - 0
+        retry:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: retry
+          order: 23
+          size:
+            - 0
+        reverse:
+          data_type: boolean
+          default_value: !!perl/ref
+            =: false
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: reverse
+          order: 11
+          size:
+            - 0
+        reversenet:
+          data_type: cidr
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: reversenet
+          order: 29
+          size:
+            - 0
+        serial:
+          data_type: char
+          default_value: 1999123001
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: serial
+          order: 20
+          size:
+            - 10
+        serial_date:
+          data_type: integer
+          default_value: 0
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: serial_date
+          order: 21
+          size:
+            - 0
+        server:
+          data_type: integer
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 1
+          is_unique: 0
+          name: server
+          order: 7
+          size:
+            - 0
+        transfer_source:
+          data_type: inet
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: transfer_source
+          order: 32
+          size:
+            - 0
+        ttl:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: ttl
+          order: 26
+          size:
+            - 0
+        type:
+          data_type: char
+          default_value: ~
+          is_nullable: 0
+          is_primary_key: 0
+          is_unique: 0
+          name: type
+          order: 10
+          size:
+            - 1
+        zone_ttl:
+          data_type: integer
+          default_value: ~
+          is_nullable: 1
+          is_primary_key: 0
+          is_unique: 0
+          name: zone_ttl
+          order: 27
+          size:
+            - 0
+      indices: []
+      name: zones
+      options: []
+      order: 35
+  triggers: {}
+  views: {}
+translator:
+  add_drop_table: 0
+  filename: ~
+  no_comments: 0
+  parser_args:
+    sources:
+      - AEntry
+      - Acl
+      - ArecEntry
+      - CidrEntry
+      - CommonField
+      - DhcpEntry
+      - EtherInfo
+      - Group
+      - GroupEntry
+      - HinfoTemplate
+      - History
+      - Host
+      - Key
+      - Lastlog
+      - Lease
+      - MxEntry
+      - MxTemplate
+      - Net
+      - News
+      - NsEntry
+      - PrinterClass
+      - PrinterEntry
+      - RootServer
+      - Server
+      - Setting
+      - SrvEntry
+      - TxtEntry
+      - User
+      - UserGroup
+      - UserRight
+      - Utmp
+      - Vlan
+      - Vmp
+      - WksEntry
+      - WksTemplate
+      - Zone
+  parser_type: SQL::Translator::Parser::DBIx::Class
+  producer_args: {}
+  producer_type: SQL::Translator::Producer::YAML
+  show_warnings: 0
+  trace: 0
+  version: 0.11024

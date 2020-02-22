@@ -1,0 +1,157 @@
+{
+   "might_have" : {
+      "fetch" : 0
+   },
+   "belongs_to" : {
+      "fetch" : 0
+   },
+   "sets" : [
+      {
+         "quantity" : "all",
+         "class" : "CommonField"
+      },
+      {
+         "quantity" : "all",
+         "class" : "Host"
+      },
+      {
+         "class" : "Server",
+         "quantity" : "all"
+      },
+      {
+         "class" : "Vlan",
+         "quantity" : "all"
+      },
+      {
+         "class" : "Acl",
+         "quantity" : "all"
+      },
+      {
+         "quantity" : "all",
+         "class" : "Lease"
+      },
+      {
+         "class" : "NsEntry",
+         "quantity" : "all"
+      },
+      {
+         "class" : "PrinterEntry",
+         "quantity" : "all"
+      },
+      {
+         "quantity" : "all",
+         "class" : "DhcpEntry"
+      },
+      {
+         "class" : "PrinterClass",
+         "quantity" : "all"
+      },
+      {
+         "class" : "CidrEntry",
+         "quantity" : "all"
+      },
+      {
+         "class" : "GroupEntry",
+         "quantity" : "all"
+      },
+      {
+         "quantity" : "all",
+         "class" : "Key"
+      },
+      {
+         "class" : "MxTemplate",
+         "quantity" : "all"
+      },
+      {
+         "quantity" : "all",
+         "class" : "RootServer"
+      },
+      {
+         "class" : "AEntry",
+         "quantity" : "all"
+      },
+      {
+         "class" : "UserRight",
+         "quantity" : "all"
+      },
+      {
+         "class" : "MxEntry",
+         "quantity" : "all"
+      },
+      {
+         "quantity" : "all",
+         "class" : "WksEntry"
+      },
+      {
+         "class" : "Net",
+         "quantity" : "all"
+      },
+      {
+         "quantity" : "all",
+         "class" : "Zone"
+      },
+      {
+         "quantity" : "all",
+         "class" : "History"
+      },
+      {
+         "class" : "User",
+         "quantity" : "all"
+      },
+      {
+         "quantity" : "all",
+         "class" : "Vmp"
+      },
+      {
+         "class" : "ArecEntry",
+         "quantity" : "all"
+      },
+      {
+         "quantity" : "all",
+         "class" : "Utmp"
+      },
+      {
+         "quantity" : "all",
+         "class" : "WksTemplate"
+      },
+      {
+         "class" : "TxtEntry",
+         "quantity" : "all"
+      },
+      {
+         "quantity" : "all",
+         "class" : "Lastlog"
+      },
+      {
+         "class" : "Setting",
+         "quantity" : "all"
+      },
+      {
+         "class" : "News",
+         "quantity" : "all"
+      },
+      {
+         "class" : "HinfoTemplate",
+         "quantity" : "all"
+      },
+      {
+         "quantity" : "all",
+         "class" : "SrvEntry"
+      },
+      {
+         "class" : "EtherInfo",
+         "quantity" : "all"
+      },
+      {
+         "class" : "UserGroup",
+         "quantity" : "all"
+      },
+      {
+         "quantity" : "all",
+         "class" : "Group"
+      }
+   ],
+   "has_many" : {
+      "fetch" : 0
+   }
+}
