@@ -73,6 +73,7 @@ __PACKAGE__->table("nets");
 =head2 server
 
   data_type: 'integer'
+  is_foreign_key: 1
   is_nullable: 0
 
 =head2 netname
@@ -188,7 +189,7 @@ __PACKAGE__->add_columns(
     is_nullable   => 0,
   },
   "server",
-  { data_type => "integer", is_nullable => 0 },
+  { data_type => "integer", is_foreign_key => 1, is_nullable => 0 },
   "netname",
   { data_type => "text", is_nullable => 1 },
   "name",
@@ -225,15 +226,15 @@ __PACKAGE__->add_columns(
 
 =over 4
 
-=item * L</net>
-
 =item * L</server>
+
+=item * L</net>
 
 =back
 
 =cut
 
-__PACKAGE__->set_primary_key("net", "server");
+__PACKAGE__->set_primary_key("server", "net");
 
 =head1 UNIQUE CONSTRAINTS
 
@@ -249,9 +250,26 @@ __PACKAGE__->set_primary_key("net", "server");
 
 __PACKAGE__->add_unique_constraint("nets_id_key", ["id"]);
 
+=head1 RELATIONS
 
-# Created by DBIx::Class::Schema::Loader v0.07049 @ 2020-02-18 07:38:19
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:+2I0q6WC2ZQtPmMw7Kl6AQ
+=head2 server
+
+Type: belongs_to
+
+Related object: L<Sauron::DB::Schema::Result::Server>
+
+=cut
+
+__PACKAGE__->belongs_to(
+  "server",
+  "Sauron::DB::Schema::Result::Server",
+  { id => "server" },
+  { is_deferrable => 0, on_delete => "RESTRICT", on_update => "RESTRICT" },
+);
+
+
+# Created by DBIx::Class::Schema::Loader v0.07049 @ 2020-02-22 23:22:17
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:0qv5+EP+4Qc15qPyqmxw4Q
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration

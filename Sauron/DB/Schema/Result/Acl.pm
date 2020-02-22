@@ -74,7 +74,8 @@ __PACKAGE__->table("acls");
 =head2 server
 
   data_type: 'integer'
-  is_nullable: 0
+  is_foreign_key: 1
+  is_nullable: 1
 
 =head2 name
 
@@ -123,7 +124,7 @@ __PACKAGE__->add_columns(
     sequence          => "acls_id_seq",
   },
   "server",
-  { data_type => "integer", is_nullable => 0 },
+  { data_type => "integer", is_foreign_key => 1, is_nullable => 1 },
   "name",
   { data_type => "text", is_nullable => 0 },
   "type",
@@ -160,9 +161,31 @@ __PACKAGE__->set_primary_key("id");
 
 __PACKAGE__->add_unique_constraint("acls_key", ["name", "server"]);
 
+=head1 RELATIONS
 
-# Created by DBIx::Class::Schema::Loader v0.07049 @ 2020-02-18 07:38:19
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:fjhq/I9ni9DIsfPLNhRZOA
+=head2 server
+
+Type: belongs_to
+
+Related object: L<Sauron::DB::Schema::Result::Server>
+
+=cut
+
+__PACKAGE__->belongs_to(
+  "server",
+  "Sauron::DB::Schema::Result::Server",
+  { id => "server" },
+  {
+    is_deferrable => 0,
+    join_type     => "LEFT",
+    on_delete     => "RESTRICT",
+    on_update     => "RESTRICT",
+  },
+);
+
+
+# Created by DBIx::Class::Schema::Loader v0.07049 @ 2020-02-22 23:22:17
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:oaNaQeEj3vexIAP3/Mr6sw
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration

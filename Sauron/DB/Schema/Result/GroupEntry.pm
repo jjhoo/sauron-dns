@@ -44,6 +44,7 @@ __PACKAGE__->table("group_entries");
 =head2 host
 
   data_type: 'integer'
+  is_foreign_key: 1
   is_nullable: 0
 
 =head2 grp
@@ -61,7 +62,7 @@ __PACKAGE__->add_columns(
     is_nullable   => 0,
   },
   "host",
-  { data_type => "integer", is_nullable => 0 },
+  { data_type => "integer", is_foreign_key => 1, is_nullable => 0 },
   "grp",
   { data_type => "integer", is_nullable => 0 },
 );
@@ -78,9 +79,26 @@ __PACKAGE__->add_columns(
 
 __PACKAGE__->set_primary_key("id");
 
+=head1 RELATIONS
 
-# Created by DBIx::Class::Schema::Loader v0.07049 @ 2020-02-18 07:38:19
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:ib69Jv+hPUs+iGrKfH4y/g
+=head2 host
+
+Type: belongs_to
+
+Related object: L<Sauron::DB::Schema::Result::Host>
+
+=cut
+
+__PACKAGE__->belongs_to(
+  "host",
+  "Sauron::DB::Schema::Result::Host",
+  { id => "host" },
+  { is_deferrable => 0, on_delete => "RESTRICT", on_update => "RESTRICT" },
+);
+
+
+# Created by DBIx::Class::Schema::Loader v0.07049 @ 2020-02-22 23:22:17
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:8R0sXjHdRA2TCVryyaho1g
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration

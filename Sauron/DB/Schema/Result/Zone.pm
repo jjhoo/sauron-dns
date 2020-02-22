@@ -73,6 +73,7 @@ __PACKAGE__->table("zones");
 =head2 server
 
   data_type: 'integer'
+  is_foreign_key: 1
   is_nullable: 0
 
 =head2 active
@@ -249,7 +250,7 @@ __PACKAGE__->add_columns(
     is_nullable   => 0,
   },
   "server",
-  { data_type => "integer", is_nullable => 0 },
+  { data_type => "integer", is_foreign_key => 1, is_nullable => 0 },
   "active",
   { data_type => "boolean", default_value => \"true", is_nullable => 1 },
   "dummy",
@@ -311,15 +312,15 @@ __PACKAGE__->add_columns(
 
 =over 4
 
-=item * L</name>
-
 =item * L</server>
+
+=item * L</name>
 
 =back
 
 =cut
 
-__PACKAGE__->set_primary_key("name", "server");
+__PACKAGE__->set_primary_key("server", "name");
 
 =head1 UNIQUE CONSTRAINTS
 
@@ -335,9 +336,56 @@ __PACKAGE__->set_primary_key("name", "server");
 
 __PACKAGE__->add_unique_constraint("zones_id_key", ["id"]);
 
+=head1 RELATIONS
 
-# Created by DBIx::Class::Schema::Loader v0.07049 @ 2020-02-18 07:38:19
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:tDh2DG4/bkhNWgA20CaUUg
+=head2 hosts
+
+Type: has_many
+
+Related object: L<Sauron::DB::Schema::Result::Host>
+
+=cut
+
+__PACKAGE__->has_many(
+  "hosts",
+  "Sauron::DB::Schema::Result::Host",
+  { "foreign.zone" => "self.id" },
+  { cascade_copy => 0, cascade_delete => 0 },
+);
+
+=head2 server
+
+Type: belongs_to
+
+Related object: L<Sauron::DB::Schema::Result::Server>
+
+=cut
+
+__PACKAGE__->belongs_to(
+  "server",
+  "Sauron::DB::Schema::Result::Server",
+  { id => "server" },
+  { is_deferrable => 0, on_delete => "RESTRICT", on_update => "RESTRICT" },
+);
+
+=head2 users
+
+Type: has_many
+
+Related object: L<Sauron::DB::Schema::Result::User>
+
+=cut
+
+__PACKAGE__->has_many(
+  "users",
+  "Sauron::DB::Schema::Result::User",
+  { "foreign.zone" => "self.id" },
+  { cascade_copy => 0, cascade_delete => 0 },
+);
+
+
+# Created by DBIx::Class::Schema::Loader v0.07049 @ 2020-02-22 23:22:17
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:Iuu/g57nUkA0i3MsMKHIpA
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration

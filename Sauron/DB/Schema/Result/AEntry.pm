@@ -44,6 +44,7 @@ __PACKAGE__->table("a_entries");
 =head2 host
 
   data_type: 'integer'
+  is_foreign_key: 1
   is_nullable: 0
 
 =head2 ip
@@ -90,7 +91,7 @@ __PACKAGE__->add_columns(
     is_nullable   => 0,
   },
   "host",
-  { data_type => "integer", is_nullable => 0 },
+  { data_type => "integer", is_foreign_key => 1, is_nullable => 0 },
   "ip",
   { data_type => "inet", is_nullable => 1 },
   "ipv6",
@@ -117,9 +118,41 @@ __PACKAGE__->add_columns(
 
 __PACKAGE__->set_primary_key("id");
 
+=head1 RELATIONS
 
-# Created by DBIx::Class::Schema::Loader v0.07049 @ 2020-02-18 07:38:19
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:RAJHCKxsR3w6tDqql+LyuQ
+=head2 arec_entries
+
+Type: has_many
+
+Related object: L<Sauron::DB::Schema::Result::ArecEntry>
+
+=cut
+
+__PACKAGE__->has_many(
+  "arec_entries",
+  "Sauron::DB::Schema::Result::ArecEntry",
+  { "foreign.arec" => "self.id" },
+  { cascade_copy => 0, cascade_delete => 0 },
+);
+
+=head2 host
+
+Type: belongs_to
+
+Related object: L<Sauron::DB::Schema::Result::Host>
+
+=cut
+
+__PACKAGE__->belongs_to(
+  "host",
+  "Sauron::DB::Schema::Result::Host",
+  { id => "host" },
+  { is_deferrable => 0, on_delete => "RESTRICT", on_update => "RESTRICT" },
+);
+
+
+# Created by DBIx::Class::Schema::Loader v0.07049 @ 2020-02-22 23:22:17
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:O203SLX4BmW6NSD1mnj6Mg
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration

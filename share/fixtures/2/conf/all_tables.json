@@ -1,0 +1,157 @@
+{
+   "sets" : [
+      {
+         "class" : "Vmp",
+         "quantity" : "all"
+      },
+      {
+         "class" : "GroupEntry",
+         "quantity" : "all"
+      },
+      {
+         "quantity" : "all",
+         "class" : "History"
+      },
+      {
+         "class" : "News",
+         "quantity" : "all"
+      },
+      {
+         "quantity" : "all",
+         "class" : "HinfoTemplate"
+      },
+      {
+         "quantity" : "all",
+         "class" : "ArecEntry"
+      },
+      {
+         "quantity" : "all",
+         "class" : "Net"
+      },
+      {
+         "quantity" : "all",
+         "class" : "Server"
+      },
+      {
+         "class" : "CidrEntry",
+         "quantity" : "all"
+      },
+      {
+         "quantity" : "all",
+         "class" : "PrinterClass"
+      },
+      {
+         "quantity" : "all",
+         "class" : "Utmp"
+      },
+      {
+         "class" : "MxEntry",
+         "quantity" : "all"
+      },
+      {
+         "quantity" : "all",
+         "class" : "DhcpEntry"
+      },
+      {
+         "quantity" : "all",
+         "class" : "MxTemplate"
+      },
+      {
+         "class" : "WksTemplate",
+         "quantity" : "all"
+      },
+      {
+         "class" : "Key",
+         "quantity" : "all"
+      },
+      {
+         "class" : "RootServer",
+         "quantity" : "all"
+      },
+      {
+         "class" : "NsEntry",
+         "quantity" : "all"
+      },
+      {
+         "quantity" : "all",
+         "class" : "UserGroup"
+      },
+      {
+         "quantity" : "all",
+         "class" : "TxtEntry"
+      },
+      {
+         "quantity" : "all",
+         "class" : "Acl"
+      },
+      {
+         "class" : "User",
+         "quantity" : "all"
+      },
+      {
+         "quantity" : "all",
+         "class" : "Zone"
+      },
+      {
+         "quantity" : "all",
+         "class" : "Vlan"
+      },
+      {
+         "class" : "UserRight",
+         "quantity" : "all"
+      },
+      {
+         "class" : "EtherInfo",
+         "quantity" : "all"
+      },
+      {
+         "class" : "Lastlog",
+         "quantity" : "all"
+      },
+      {
+         "class" : "Lease",
+         "quantity" : "all"
+      },
+      {
+         "class" : "SrvEntry",
+         "quantity" : "all"
+      },
+      {
+         "class" : "WksEntry",
+         "quantity" : "all"
+      },
+      {
+         "quantity" : "all",
+         "class" : "PrinterEntry"
+      },
+      {
+         "quantity" : "all",
+         "class" : "CommonField"
+      },
+      {
+         "quantity" : "all",
+         "class" : "Host"
+      },
+      {
+         "class" : "Group",
+         "quantity" : "all"
+      },
+      {
+         "quantity" : "all",
+         "class" : "Setting"
+      },
+      {
+         "class" : "AEntry",
+         "quantity" : "all"
+      }
+   ],
+   "belongs_to" : {
+      "fetch" : 0
+   },
+   "might_have" : {
+      "fetch" : 0
+   },
+   "has_many" : {
+      "fetch" : 0
+   }
+}

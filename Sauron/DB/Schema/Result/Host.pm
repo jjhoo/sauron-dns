@@ -73,6 +73,7 @@ __PACKAGE__->table("hosts");
 =head2 zone
 
   data_type: 'integer'
+  is_foreign_key: 1
   is_nullable: 0
 
 =head2 type
@@ -286,7 +287,7 @@ __PACKAGE__->add_columns(
     is_nullable   => 0,
   },
   "zone",
-  { data_type => "integer", is_nullable => 0 },
+  { data_type => "integer", is_foreign_key => 1, is_nullable => 0 },
   "type",
   { data_type => "integer", default_value => 0, is_nullable => 1 },
   "domain",
@@ -413,6 +414,51 @@ __PACKAGE__->add_unique_constraint("hostname_key", ["domain", "zone"]);
 
 =head1 RELATIONS
 
+=head2 a_entries
+
+Type: has_many
+
+Related object: L<Sauron::DB::Schema::Result::AEntry>
+
+=cut
+
+__PACKAGE__->has_many(
+  "a_entries",
+  "Sauron::DB::Schema::Result::AEntry",
+  { "foreign.host" => "self.id" },
+  { cascade_copy => 0, cascade_delete => 0 },
+);
+
+=head2 arec_entries
+
+Type: has_many
+
+Related object: L<Sauron::DB::Schema::Result::ArecEntry>
+
+=cut
+
+__PACKAGE__->has_many(
+  "arec_entries",
+  "Sauron::DB::Schema::Result::ArecEntry",
+  { "foreign.host" => "self.id" },
+  { cascade_copy => 0, cascade_delete => 0 },
+);
+
+=head2 group_entries
+
+Type: has_many
+
+Related object: L<Sauron::DB::Schema::Result::GroupEntry>
+
+=cut
+
+__PACKAGE__->has_many(
+  "group_entries",
+  "Sauron::DB::Schema::Result::GroupEntry",
+  { "foreign.host" => "self.id" },
+  { cascade_copy => 0, cascade_delete => 0 },
+);
+
 =head2 histories
 
 Type: has_many
@@ -428,9 +474,39 @@ __PACKAGE__->has_many(
   { cascade_copy => 0, cascade_delete => 0 },
 );
 
+=head2 leases
 
-# Created by DBIx::Class::Schema::Loader v0.07049 @ 2020-02-18 07:38:19
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:JTYT2JHN3s4kxPMJttOmTQ
+Type: has_many
+
+Related object: L<Sauron::DB::Schema::Result::Lease>
+
+=cut
+
+__PACKAGE__->has_many(
+  "leases",
+  "Sauron::DB::Schema::Result::Lease",
+  { "foreign.host" => "self.id" },
+  { cascade_copy => 0, cascade_delete => 0 },
+);
+
+=head2 zone
+
+Type: belongs_to
+
+Related object: L<Sauron::DB::Schema::Result::Zone>
+
+=cut
+
+__PACKAGE__->belongs_to(
+  "zone",
+  "Sauron::DB::Schema::Result::Zone",
+  { id => "zone" },
+  { is_deferrable => 0, on_delete => "RESTRICT", on_update => "RESTRICT" },
+);
+
+
+# Created by DBIx::Class::Schema::Loader v0.07049 @ 2020-02-22 23:22:17
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:7BWvPv5QYbw87oQDChxENQ
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration

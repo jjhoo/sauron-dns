@@ -151,8 +151,8 @@ __PACKAGE__->set_primary_key("id");
 __PACKAGE__->add_unique_constraint("hinfo_templates_hinfo_key", ["hinfo"]);
 
 
-# Created by DBIx::Class::Schema::Loader v0.07049 @ 2020-02-18 07:38:19
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:BbpfQVIibE+1soO8ZP0S6Q
+# Created by DBIx::Class::Schema::Loader v0.07049 @ 2020-02-22 23:22:17
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:OITcqYaM8b0urIu5AdZcmg
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration

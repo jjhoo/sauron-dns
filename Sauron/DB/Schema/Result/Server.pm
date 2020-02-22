@@ -108,7 +108,7 @@ __PACKAGE__->table("servers");
 =head2 masterserver
 
   data_type: 'integer'
-  default_value: -1
+  is_foreign_key: 1
   is_nullable: 1
 
 =head2 version
@@ -393,7 +393,7 @@ __PACKAGE__->add_columns(
   "named_flags",
   { data_type => "integer", default_value => 0, is_nullable => 1 },
   "masterserver",
-  { data_type => "integer", default_value => -1, is_nullable => 1 },
+  { data_type => "integer", is_foreign_key => 1, is_nullable => 1 },
   "version",
   { data_type => "text", is_nullable => 1 },
   "directory",
@@ -504,9 +504,211 @@ __PACKAGE__->set_primary_key("id");
 
 __PACKAGE__->add_unique_constraint("servers_name_key", ["name"]);
 
+=head1 RELATIONS
 
-# Created by DBIx::Class::Schema::Loader v0.07049 @ 2020-02-18 07:38:19
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:suR7aA/YfVuNbnRLCS2+TQ
+=head2 acls
+
+Type: has_many
+
+Related object: L<Sauron::DB::Schema::Result::Acl>
+
+=cut
+
+__PACKAGE__->has_many(
+  "acls",
+  "Sauron::DB::Schema::Result::Acl",
+  { "foreign.server" => "self.id" },
+  { cascade_copy => 0, cascade_delete => 0 },
+);
+
+=head2 groups
+
+Type: has_many
+
+Related object: L<Sauron::DB::Schema::Result::Group>
+
+=cut
+
+__PACKAGE__->has_many(
+  "groups",
+  "Sauron::DB::Schema::Result::Group",
+  { "foreign.server" => "self.id" },
+  { cascade_copy => 0, cascade_delete => 0 },
+);
+
+=head2 leases
+
+Type: has_many
+
+Related object: L<Sauron::DB::Schema::Result::Lease>
+
+=cut
+
+__PACKAGE__->has_many(
+  "leases",
+  "Sauron::DB::Schema::Result::Lease",
+  { "foreign.server" => "self.id" },
+  { cascade_copy => 0, cascade_delete => 0 },
+);
+
+=head2 masterserver
+
+Type: belongs_to
+
+Related object: L<Sauron::DB::Schema::Result::Server>
+
+=cut
+
+__PACKAGE__->belongs_to(
+  "masterserver",
+  "Sauron::DB::Schema::Result::Server",
+  { id => "masterserver" },
+  {
+    is_deferrable => 0,
+    join_type     => "LEFT",
+    on_delete     => "RESTRICT",
+    on_update     => "RESTRICT",
+  },
+);
+
+=head2 nets
+
+Type: has_many
+
+Related object: L<Sauron::DB::Schema::Result::Net>
+
+=cut
+
+__PACKAGE__->has_many(
+  "nets",
+  "Sauron::DB::Schema::Result::Net",
+  { "foreign.server" => "self.id" },
+  { cascade_copy => 0, cascade_delete => 0 },
+);
+
+=head2 news
+
+Type: has_many
+
+Related object: L<Sauron::DB::Schema::Result::News>
+
+=cut
+
+__PACKAGE__->has_many(
+  "news",
+  "Sauron::DB::Schema::Result::News",
+  { "foreign.server" => "self.id" },
+  { cascade_copy => 0, cascade_delete => 0 },
+);
+
+=head2 root_servers
+
+Type: has_many
+
+Related object: L<Sauron::DB::Schema::Result::RootServer>
+
+=cut
+
+__PACKAGE__->has_many(
+  "root_servers",
+  "Sauron::DB::Schema::Result::RootServer",
+  { "foreign.server" => "self.id" },
+  { cascade_copy => 0, cascade_delete => 0 },
+);
+
+=head2 servers
+
+Type: has_many
+
+Related object: L<Sauron::DB::Schema::Result::Server>
+
+=cut
+
+__PACKAGE__->has_many(
+  "servers",
+  "Sauron::DB::Schema::Result::Server",
+  { "foreign.masterserver" => "self.id" },
+  { cascade_copy => 0, cascade_delete => 0 },
+);
+
+=head2 users
+
+Type: has_many
+
+Related object: L<Sauron::DB::Schema::Result::User>
+
+=cut
+
+__PACKAGE__->has_many(
+  "users",
+  "Sauron::DB::Schema::Result::User",
+  { "foreign.server" => "self.id" },
+  { cascade_copy => 0, cascade_delete => 0 },
+);
+
+=head2 vlans
+
+Type: has_many
+
+Related object: L<Sauron::DB::Schema::Result::Vlan>
+
+=cut
+
+__PACKAGE__->has_many(
+  "vlans",
+  "Sauron::DB::Schema::Result::Vlan",
+  { "foreign.server" => "self.id" },
+  { cascade_copy => 0, cascade_delete => 0 },
+);
+
+=head2 vmps
+
+Type: has_many
+
+Related object: L<Sauron::DB::Schema::Result::Vmp>
+
+=cut
+
+__PACKAGE__->has_many(
+  "vmps",
+  "Sauron::DB::Schema::Result::Vmp",
+  { "foreign.server" => "self.id" },
+  { cascade_copy => 0, cascade_delete => 0 },
+);
+
+=head2 wks_templates
+
+Type: has_many
+
+Related object: L<Sauron::DB::Schema::Result::WksTemplate>
+
+=cut
+
+__PACKAGE__->has_many(
+  "wks_templates",
+  "Sauron::DB::Schema::Result::WksTemplate",
+  { "foreign.server" => "self.id" },
+  { cascade_copy => 0, cascade_delete => 0 },
+);
+
+=head2 zones
+
+Type: has_many
+
+Related object: L<Sauron::DB::Schema::Result::Zone>
+
+=cut
+
+__PACKAGE__->has_many(
+  "zones",
+  "Sauron::DB::Schema::Result::Zone",
+  { "foreign.server" => "self.id" },
+  { cascade_copy => 0, cascade_delete => 0 },
+);
+
+
+# Created by DBIx::Class::Schema::Loader v0.07049 @ 2020-02-22 23:22:17
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:fJxNZSPKegiRUle4s2W8Mg
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration

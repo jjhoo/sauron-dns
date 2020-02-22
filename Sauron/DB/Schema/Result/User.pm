@@ -105,13 +105,13 @@ __PACKAGE__->table("users");
 =head2 server
 
   data_type: 'integer'
-  default_value: -1
+  is_foreign_key: 1
   is_nullable: 1
 
 =head2 zone
 
   data_type: 'integer'
-  default_value: -1
+  is_foreign_key: 1
   is_nullable: 1
 
 =head2 last
@@ -189,9 +189,9 @@ __PACKAGE__->add_columns(
   "superuser",
   { data_type => "boolean", default_value => \"false", is_nullable => 1 },
   "server",
-  { data_type => "integer", default_value => -1, is_nullable => 1 },
+  { data_type => "integer", is_foreign_key => 1, is_nullable => 1 },
   "zone",
-  { data_type => "integer", default_value => -1, is_nullable => 1 },
+  { data_type => "integer", is_foreign_key => 1, is_nullable => 1 },
   "last",
   { data_type => "integer", default_value => 0, is_nullable => 1 },
   "last_pwd",
@@ -232,9 +232,51 @@ __PACKAGE__->set_primary_key("id");
 
 __PACKAGE__->add_unique_constraint("username_key", ["username"]);
 
+=head1 RELATIONS
 
-# Created by DBIx::Class::Schema::Loader v0.07049 @ 2020-02-18 07:38:19
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:H0HQHqGhefCBrBoSbObEAQ
+=head2 server
+
+Type: belongs_to
+
+Related object: L<Sauron::DB::Schema::Result::Server>
+
+=cut
+
+__PACKAGE__->belongs_to(
+  "server",
+  "Sauron::DB::Schema::Result::Server",
+  { id => "server" },
+  {
+    is_deferrable => 0,
+    join_type     => "LEFT",
+    on_delete     => "RESTRICT",
+    on_update     => "RESTRICT",
+  },
+);
+
+=head2 zone
+
+Type: belongs_to
+
+Related object: L<Sauron::DB::Schema::Result::Zone>
+
+=cut
+
+__PACKAGE__->belongs_to(
+  "zone",
+  "Sauron::DB::Schema::Result::Zone",
+  { id => "zone" },
+  {
+    is_deferrable => 0,
+    join_type     => "LEFT",
+    on_delete     => "RESTRICT",
+    on_update     => "RESTRICT",
+  },
+);
+
+
+# Created by DBIx::Class::Schema::Loader v0.07049 @ 2020-02-22 23:22:17
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:twlYw6o0kYG7GOd036/Y0w
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration

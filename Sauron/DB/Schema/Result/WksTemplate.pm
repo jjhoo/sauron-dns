@@ -73,6 +73,7 @@ __PACKAGE__->table("wks_templates");
 =head2 server
 
   data_type: 'integer'
+  is_foreign_key: 1
   is_nullable: 0
 
 =head2 alevel
@@ -121,7 +122,7 @@ __PACKAGE__->add_columns(
     is_nullable   => 0,
   },
   "server",
-  { data_type => "integer", is_nullable => 0 },
+  { data_type => "integer", is_foreign_key => 1, is_nullable => 0 },
   "alevel",
   { data_type => "integer", default_value => 0, is_nullable => 1 },
   "name",
@@ -142,9 +143,26 @@ __PACKAGE__->add_columns(
 
 __PACKAGE__->set_primary_key("id");
 
+=head1 RELATIONS
 
-# Created by DBIx::Class::Schema::Loader v0.07049 @ 2020-02-18 07:38:19
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:lbxMvOxyW0HnxqUWdtZSKA
+=head2 server
+
+Type: belongs_to
+
+Related object: L<Sauron::DB::Schema::Result::Server>
+
+=cut
+
+__PACKAGE__->belongs_to(
+  "server",
+  "Sauron::DB::Schema::Result::Server",
+  { id => "server" },
+  { is_deferrable => 0, on_delete => "RESTRICT", on_update => "RESTRICT" },
+);
+
+
+# Created by DBIx::Class::Schema::Loader v0.07049 @ 2020-02-22 23:22:17
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:Bk8se4VkYFolCWGokkIkMw
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration

@@ -45,11 +45,13 @@ __PACKAGE__->table("leases");
 =head2 server
 
   data_type: 'integer'
+  is_foreign_key: 1
   is_nullable: 0
 
 =head2 host
 
   data_type: 'integer'
+  is_foreign_key: 1
   is_nullable: 0
 
 =head2 ip
@@ -110,9 +112,9 @@ __PACKAGE__->add_columns(
     sequence          => "leases_id_seq",
   },
   "server",
-  { data_type => "integer", is_nullable => 0 },
+  { data_type => "integer", is_foreign_key => 1, is_nullable => 0 },
   "host",
-  { data_type => "integer", is_nullable => 0 },
+  { data_type => "integer", is_foreign_key => 1, is_nullable => 0 },
   "ip",
   { data_type => "inet", is_nullable => 1 },
   "ipv6",
@@ -145,9 +147,41 @@ __PACKAGE__->add_columns(
 
 __PACKAGE__->set_primary_key("id");
 
+=head1 RELATIONS
 
-# Created by DBIx::Class::Schema::Loader v0.07049 @ 2020-02-18 07:38:19
-# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:GRGJcnW9/5Dwu+j4XmCnlg
+=head2 host
+
+Type: belongs_to
+
+Related object: L<Sauron::DB::Schema::Result::Host>
+
+=cut
+
+__PACKAGE__->belongs_to(
+  "host",
+  "Sauron::DB::Schema::Result::Host",
+  { id => "host" },
+  { is_deferrable => 0, on_delete => "RESTRICT", on_update => "RESTRICT" },
+);
+
+=head2 server
+
+Type: belongs_to
+
+Related object: L<Sauron::DB::Schema::Result::Server>
+
+=cut
+
+__PACKAGE__->belongs_to(
+  "server",
+  "Sauron::DB::Schema::Result::Server",
+  { id => "server" },
+  { is_deferrable => 0, on_delete => "RESTRICT", on_update => "RESTRICT" },
+);
+
+
+# Created by DBIx::Class::Schema::Loader v0.07049 @ 2020-02-22 23:22:17
+# DO NOT MODIFY THIS OR ANYTHING ABOVE! md5sum:XdSaav55uaupAfDvaG/MOA
 
 
 # You can replace this text with custom code or comments, and it will be preserved on regeneration
