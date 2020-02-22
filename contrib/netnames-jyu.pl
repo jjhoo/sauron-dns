@@ -10,7 +10,6 @@
 #  Net 192.168  Testing network
 #  Net 192.168.1.0/27  Testing network...
 #
-# $Id$
 #
 use Net::Netmask;
 use Getopt::Std;

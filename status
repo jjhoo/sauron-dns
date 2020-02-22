@@ -3,7 +3,6 @@
 # status -- utlity to query/modify system status
 #
 # Copyright (c) Timo Kokkonen <tjko@iki.fi>  2001-2003.
-# $Id$
 #
 require 5;
 use Getopt::Long;
@@ -54,15 +53,6 @@ if ($opt_versions) {
   print "Net::Netmask: ",$Net::Netmask::VERSION,"\n\n";
 
   print "Sauron::Sauron: ",($Sauron::Sauron::VERSION =~ /,v\s+(\S+)\s/),"\n";
-  print "Sauron::BackEnd: ",($Sauron::BackEnd::VERSION =~ /,v\s+(\S+)\s/),"\n";
-  print "Sauron::CGIutil: ",($Sauron::CGIutil::VERSION =~ /,v\s+(\S+)\s/),"\n";
-  print "Sauron::DB: ",($Sauron::DB::VERSION =~ /,v\s+(\S+)\s/),"\n";
-  print "Sauron::Util: ",($Sauron::Util::VERSION =~ /,v\s+(\S+)\s/),"\n";
-  print "Sauron::UtilDhcp: ",($Sauron::UtilDhcp::VERSION =~ /,v\s+(\S+)\s/),
-        "\n";
-  print "Sauron::UtilZone: ",($Sauron::UtilZone::VERSION =~ /,v\s+(\S+)\s/),
-        "\n\n";
-
 
   my @modules = ( 'Sauron::CGI::Utils',
 		  'Sauron::CGI::Servers',

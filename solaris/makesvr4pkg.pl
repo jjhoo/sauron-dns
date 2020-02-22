@@ -3,7 +3,6 @@
 # makesvr4pkg.pl -- simple SVR4 packakge building tool
 #
 # Copyright (c) Timo Kokkonen <tjko@iki.fi> 2003,2004.
-# $Id$
 #
 use File::Path;
 use Getopt::Long;
