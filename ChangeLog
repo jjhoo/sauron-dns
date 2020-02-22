@@ -1,3 +1,10 @@
+2020-02-22  Jani Hakala  <jjhakala@gmail.com>
+
+	* Sauron/Sauron.pm: Add 'v' prefix to $VERSION
+
+	Remove $VERSION variable from packages except for Sauron/Sauron.pm.
+	Remove CVS related code comments i.e. $Id$.
+
 0.7.4
 	[project moved to sourceforge and switched to use git instead of cvs]
 
