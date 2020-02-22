@@ -4,8 +4,12 @@
 #
 package Sauron::Sauron;
 require Exporter;
+
+use File::ConfigDir;
+use File::Spec;
+use MIME::Base64 qw(decode_base64);
+
 use Sauron::Util;
-use MIME::Base64 qw(decode_base64); 
 use strict;
 use vars qw($VERSION $CONF_FILE_PATH @ISA @EXPORT);
 
@@ -171,8 +175,14 @@ sub load_config_file($$) {
       unless ($cfile);
   $modemask=0 unless ($modemask);
 
+  my ($config_dir) = File::ConfigDir::user_cfg_dir('sauron');
+  my $sauron_config = File::Spec->catfile($config_dir, 'config');
+
   if ( ($cfile =~ /^\//) && -f $cfile ) {
       $file=$cfile;
+  }
+  elsif (-f $sauron_config) {
+      $file = $sauron_config;
   }
   elsif ( ($CONF_FILE_PATH !~ /^__CONF_FILE_PATH/) &&
        -f "$CONF_FILE_PATH/$cfile" ) {

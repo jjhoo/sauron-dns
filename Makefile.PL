@@ -47,6 +47,7 @@ my %config = (
         "Digest::MD5" => 2.54,
         "Digest::SHA" => 5.96,
         "Exporter" => 0,
+        "File::ConfigDir" => 0.017,
         "MIME::Base64" => 3.15,
         "Net::DNS" => 1.07,
         "Net::IP" => 1.26,
